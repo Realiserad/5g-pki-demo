@@ -1,0 +1,13 @@
+Object Type: Crypto Token
+Version: 2
+Name: Root CA Keys
+Used: true
+Key Pair Info:
+- Alias: signKey
+  Key Algorithm: RSA
+  Key Specification: '4096'
+  Subject Key Identifier: 41ec430beb54199a67bc7d1fee99db46d2c3cc15
+Authentication Code: foo123
+Type: SoftCryptoToken
+Active: true
+Auto Activation: true

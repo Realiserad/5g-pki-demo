@@ -1,0 +1,38 @@
+Object Type: Certificate Profile
+Version: 1
+Name: TLS Server - RSA
+Type: End Entity
+Available Key Algorithms:
+- RSA
+Available Elliptic Curves:
+- ANY_EC_CURVE
+Available Bit Lengths:
+- 2048
+Signature Algorithm: Inherit from Issuing CA
+Validity: 1y
+Description: ''
+Overridable Extension OIDs: [
+  ]
+Non-overridable Extension OIDs: [
+  ]
+Key Usage:
+- Digital Signature
+- Key Encipherment
+Extended Key Usage:
+- Server Authentication
+Certificate Policies Used: true
+Certificate Policies:
+- Policy ID: 2.5.29.32.0
+  Qualifier ID: 1.3.6.1.5.5.7.2.1
+  Qualifier: https://pki/repository
+Authority Information Access Used: true
+OCSP Service Locator URL Is CA Defined: true
+OCSP Issuer URL Is CA Defined: true
+CVC Access Rights (Inspection System):
+- DG3
+- DG4
+LDAP DN Order: false
+Available CAs:
+- Core Intermediate CA v1
+Account Binding Namespace: [
+  ]

@@ -1,0 +1,27 @@
+Object Type: Internal Key Binding
+Version: 1
+Name: RAN Intermediate CA v1 OCSP Responder
+Type: OcspKeyBinding
+Status: DISABLED
+Crypto Token: RAN Intermediate CA Keys
+Bound Certificate SHA-1: 60cdd8d7e460ebb99785ec544949f6c2fe0e3f8d
+Key Pair Alias: signKey_v1
+Next Key Pair Alias: null
+Signature Algorithm: SHA256WithRSA
+Trusted certificates: {
+  }
+Signed on behalf of CAs: {
+  }
+OCSP Extensions: [
+  ]
+Properties:
+  Non existing is good: false
+  Non existing is revoked: false
+  Non existing is unauthorized: false
+  Include certificate chain in response: false
+  Include signing certificate in response: false
+  ResponderID: KEYHASH
+  Request must be signed with a trusted certificate: false
+  Response validity: 28800
+  Max-Age HTTP header: 28800
+  Enable nonce in response: false

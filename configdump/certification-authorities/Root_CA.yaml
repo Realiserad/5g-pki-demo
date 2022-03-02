@@ -1,0 +1,47 @@
+Object Type: Certification Authority
+Version: 2
+Name: Root CA
+Type of CA: X.509
+Description: 3GPP trust anchor.
+Serial Number Octet Size: 16
+Pre-produce OCSP Responses: false
+Microsoft CA Compatible Mode Used: false
+Store responses on-demand: false
+Certificate Profile: Root CA - RSA
+Default Certificate Profile: Not used
+Use Append-Only Table: false
+CA Token:
+  Signature Algorithm: SHA384WithRSA
+  Encryption Algorithm: SHA384WithRSA
+  Crypto Token: Root CA Keys
+  Default Key: signKey
+  Certificate Signing Key: signKey
+  CRL Signing Key: signKey
+  Key Encryption Key: signKey
+  Test Key: signKey
+  Key Sequence Format: Numeric
+  Key Sequence: '00000'
+Enforce Unique Public Keys: true
+Enforce key renewal: false
+Enforce Unique DN: true
+User Storage: true
+Certificate Storage: true
+Accept Revocations for Non-Existing Entries: false
+Subject DN: CN=Root CA,O=Carrier Ltd.,C=EX
+Signed By: Self Signed
+Validity: 30y
+Subject Alternative Name: None
+Use UTF-8 in Policy Notice Text: true
+LDAP DN Order: false
+Authority Key Id Used: true
+CRL Number Used: true
+Partitioned CRL Used: false
+CRL Expiration Period: 6mo
+CRL Issue Interval: 0m
+CRL Overlap Time: 0m
+Delta CRL Period: 0m
+Generate CRL Upon Revocation: false
+Default CRL Distribution Point: http://pki/crl/root.crl
+Finish User: true
+CA Healthcheck Enabled: true
+Request Processor: null

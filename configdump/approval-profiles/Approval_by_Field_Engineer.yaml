@@ -1,0 +1,29 @@
+Object Type: Approval Profile
+Version: 1
+ID: 1979871319
+Type: PARTITIONED_APPROVAL
+Name: Approval by Field Engineer
+Approval Expiration Period: 2d
+Request Expiration Period: 2d
+Max Extension Time: 0d
+Allow Self-Approved Request Editing: true
+Steps:
+- Step Identifier: 0
+  Partitions:
+  - Partition Identifier: 106023954
+    Title: Approval by field engineer
+    Can Approve:
+    - Anybody
+    Can View:
+    - Anybody
+    Components:
+    - Type: Text Field
+      Label: Comment
+      Content: null
+    - Type: Radio Group
+      Label: Type of device
+      Selected Choice: Ericsson RBS
+      Possible Choices:
+      - Nokia AirScale
+      - Ericsson RBS 3106
+      - Ericsson RBS 3206

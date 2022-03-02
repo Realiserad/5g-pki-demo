@@ -1,0 +1,26 @@
+Object Type: CMP Configuration
+Version: 1
+Name: ipsec_ran_airscale
+CMP Operational Mode is RA: true
+CMP Authentication Module: EndEntityCertificate
+CMP Authentication Module Parameters: foo123
+RA Verify Proof of Possession: false
+RA Name Generation Scheme: DN
+RA Name Generation Scheme Parameters: CN
+RA Name Generation Prefix: airscale-
+RA Name Generation Postfix: ''
+Password Generation Parameter: random
+Custom Certificate Serial Number: false
+RA End Entity Profile: Nokia AirScale
+RA Certificate Profile: IPSec - RSA
+RA CA Name: RAN Intermediate CA v1
+Verifications in EndEntityCertificate Authentication Module: false
+CMP Response Protection: signature
+CMP Response Additional CA Certificates: ''
+CMP Response Issuing CA Certificate at index 0: false
+PKI Message Response Additional CA Certificates: ''
+Default CA: ''
+Automatic Key Update: true
+Certificate Renewal with Same Keys: true
+Allow Server Generated Keys: false
+Trusted Certificates Path: ''

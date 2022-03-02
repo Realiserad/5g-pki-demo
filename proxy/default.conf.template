@@ -1,0 +1,34 @@
+server {
+    listen 80;
+    server_name pki;
+    proxy_set_header X-Forwarded-For $remote_addr;
+
+    location /enroll/airscale {
+        proxy_pass http://ca:8080/ejbca/publicweb/cmp/ipsec_ran_airscale;
+    }
+    location /enroll/container {
+        proxy_pass http://ca:8080/ejbca/publicweb/cmp/ipsec_ran_container;
+    }
+    location /ocsp {
+        proxy_pass http://ca:8080/ejbca/publicweb/status/ocsp;
+    }
+    location /repository/root.cer {
+        proxy_pass http://ca:8080/ejbca/publicweb/certificates/search.cgi?sHash=/yCaPZWU1keCCJUweqGl8bpC4us;
+    }
+    location /repository/corev1.cer {
+        proxy_pass http://ca:8080/ejbca/publicweb/certificates/search.cgi?sHash=RAVafFVStiLBlRk55JdOZ0N9oJA;
+    }
+    location /repository/ranv1.cer {
+        proxy_pass http://ca:8080/ejbca/publicweb/certificates/search.cgi?sHash=CmqMgD1Ain4J1Ru6oSkEfsiljeU;
+    }
+    location /crl/root.crl {
+        proxy_pass http://ca:8080/ejbca/publicweb/crls/search.cgi?iHash=/yCaPZWU1keCCJUweqGl8bpC4us;
+    }
+    location /crl/corev1.crl {
+        proxy_pass http://ca:8080/ejbca/publicweb/crls/search.cgi?iHash=RAVafFVStiLBlRk55JdOZ0N9oJA;
+    }
+    location /crl/ranv1.crl {
+        proxy_pass http://ca:8080/ejbca/publicweb/crls/search.cgi?iHash=CmqMgD1Ain4J1Ru6oSkEfsiljeU;
+    }
+}
+

@@ -1,0 +1,31 @@
+Object Type: Certificate Profile
+Version: 1
+Name: Root CA - RSA
+Type: Root CA
+Available Key Algorithms:
+- RSA
+Available Elliptic Curves:
+- ANY_EC_CURVE
+Available Bit Lengths:
+- 4096
+Signature Algorithm: SHA384WithRSA
+Validity: 30y
+Description: ''
+Overridable Extension OIDs: [
+  ]
+Non-overridable Extension OIDs: [
+  ]
+Key Usage:
+- Key Certificate Sign
+- CRL Sign
+Extended Key Usage Used: false
+Extended Key Usage: [
+  ]
+CVC Access Rights (Inspection System):
+- DG3
+- DG4
+LDAP DN Order: false
+Available CAs:
+- Any CA
+Account Binding Namespace: [
+  ]

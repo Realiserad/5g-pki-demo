@@ -1,0 +1,17 @@
+Object Type: Crypto Token
+Version: 2
+Name: Core Intermediate CA Keys
+Used: true
+Key Pair Info:
+- Alias: signKey_v1
+  Key Algorithm: RSA
+  Key Specification: '3072'
+  Subject Key Identifier: dcbba81888479ffb58afc6dc1fd0f6f34781507e
+- Alias: testKey
+  Key Algorithm: RSA
+  Key Specification: '2048'
+  Subject Key Identifier: 64a0c03ff68adefe12edad0ec8c7ad89de3fa18a
+Authentication Code: foo123
+Type: SoftCryptoToken
+Active: true
+Auto Activation: true

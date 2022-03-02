@@ -1,0 +1,49 @@
+version: '3'
+networks:
+  router:
+    driver: bridge
+services:
+  ca:
+    container_name: ca
+    hostname: ca
+    image: artifactory.primekey.com/con-develop-container/primekey/ejbca-ee:main
+    #image: registry.primekey.com/primekey/testing/ejbca-ee:latest
+    networks:
+      - router
+    volumes:
+      - ./configdump:/opt/primekey/configdump/initialize.d
+      - ./trust:/mnt/external/secrets/tls/cas
+    environment:
+      - TLS_SETUP_ENABLED=simple
+    ports:
+      - "8043:8443"
+  proxy:
+    container_name: proxy
+    hostname: pki
+    image: nginx
+    networks:
+      - router
+    volumes:
+      - ./proxy:/etc/nginx/templates
+    depends_on:
+      - ca
+  client1:
+    container_name: altiostar
+    image: realiserad/openssl3
+    networks:
+      - router
+    environment:
+      - SECRET=foo123
+    stdin_open: true
+    depends_on:
+      - proxy
+  client2:
+    container_name: airscale
+    image: realiserad/openssl3
+    networks:
+      - router
+    volumes:
+      - ./vendor:/vendor
+    stdin_open: true
+    depends_on:
+      - proxy

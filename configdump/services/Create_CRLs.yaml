@@ -1,0 +1,22 @@
+Object Type: Service
+Version: 1
+Name: Create CRLs
+Worker Type: CRL Updater
+Worker Properties:
+  CAs to Check:
+  - Core Intermediate CA v1
+  - ManagementCA
+  - RAN Intermediate CA v1
+Interval Type: Periodical Interval
+Interval Properties:
+  Periodical Value: 1
+  Periodical Unit: HOURS
+Action Type: No Action
+Action Properties: {
+  }
+Description: ''
+Active: true
+Hidden: false
+Pin to Specific Nodes: [
+  ]
+Run on All Nodes: false

@@ -1,0 +1,49 @@
+Object Type: Certification Authority
+Version: 2
+Name: RAN Intermediate CA v1
+Type of CA: X.509
+Serial Number Octet Size: 16
+Pre-produce OCSP Responses: false
+Microsoft CA Compatible Mode Used: false
+Store responses on-demand: false
+Certificate Profile: Intermediate CA - RSA
+Default Certificate Profile: Not used
+Use Append-Only Table: false
+CA Token:
+  Signature Algorithm: SHA256WithRSA
+  Encryption Algorithm: SHA256WithRSA
+  Crypto Token: RAN Intermediate CA Keys
+  Default Key: signKey_v1
+  Certificate Signing Key: signKey_v1
+  CRL Signing Key: signKey_v1
+  Key Encryption Key: signKey_v1
+  Test Key: testKey
+  Key Sequence Format: Numeric
+  Key Sequence: '00000'
+Enforce Unique Public Keys: true
+Enforce key renewal: false
+Enforce Unique DN: true
+User Storage: true
+Certificate Storage: true
+Accept Revocations for Non-Existing Entries: false
+Subject DN: CN=RAN Intermediate CA v1,O=Carrier Ltd.,C=EX
+Signed By: Root CA
+Validity: 5y
+Subject Alternative Name: None
+Use UTF-8 in Policy Notice Text: true
+LDAP DN Order: false
+Authority Key Id Used: true
+CRL Number Used: true
+Partitioned CRL Used: false
+CRL Expiration Period: 1mo
+CRL Issue Interval: 15d
+CRL Overlap Time: 0m
+Delta CRL Period: 0m
+Generate CRL Upon Revocation: false
+Default CRL Distribution Point: http://pki/crl/ranv1.crl
+OCSP Service Default URI: http://pki/ocsp
+AIA CA Issuer URIs:
+- http://pki/repository/ranv1.cer
+Finish User: false
+CA Healthcheck Enabled: true
+Request Processor: null

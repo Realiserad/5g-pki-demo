@@ -1,0 +1,34 @@
+Object Type: Certificate Profile
+Version: 1
+Name: OCSP Signer
+Type: End Entity
+Available Key Algorithms:
+- ECDSA
+- RSA
+Available Elliptic Curves:
+- P-256
+Available Bit Lengths:
+- 2048
+- 3072
+Signature Algorithm: Inherit from Issuing CA
+Validity: 1y
+Description: ''
+Overridable Extension OIDs: [
+  ]
+Non-overridable Extension OIDs: [
+  ]
+Key Usage:
+- Digital Signature
+Extended Key Usage Used: false
+Extended Key Usage:
+- OCSP Signing
+OCSP No Check: true
+CVC Access Rights (Inspection System):
+- DG3
+- DG4
+LDAP DN Order: false
+Available CAs:
+- Core Intermediate CA v1
+- RAN Intermediate CA v1
+Account Binding Namespace: [
+  ]
