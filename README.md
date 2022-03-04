@@ -6,6 +6,11 @@ Install Docker and Docker Compose.
 sudo apt install docker docker-compose
 ```
 
+Log in to the PrimeKey registry.
+```
+docker login registry.primekey.com
+```
+
 Run
 ===
 
