@@ -6,8 +6,7 @@ services:
   ca:
     container_name: ca
     hostname: ca
-    image: artifactory.primekey.com/con-develop-container/primekey/ejbca-ee:main
-    #image: registry.primekey.com/primekey/testing/ejbca-ee:latest
+    image: registry.primekey.com/primekey/ejbca-ee:7.8.1
     networks:
       - router
     volumes:
