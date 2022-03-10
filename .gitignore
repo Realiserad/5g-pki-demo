@@ -1,2 +1,4 @@
 trust
 vendor*.pem
+vault/jq
+vault/curl

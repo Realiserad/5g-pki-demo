@@ -3,6 +3,23 @@ networks:
   router:
     driver: bridge
 services:
+  ofelia:
+    image: mcuadros/ofelia
+    depends_on:
+      - ca
+    command: daemon --docker
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+  vault:
+    container_name: vault
+    hostname: vault
+    image: vault
+    networks:
+      - router
+    ports:
+      - "8200:8200"
+    command: >
+      vault server -dev -dev-root-token-id=token -dev-listen-address=0.0.0.0:8200
   ca:
     container_name: ca
     hostname: ca
@@ -12,10 +29,21 @@ services:
     volumes:
       - ./configdump:/opt/primekey/configdump/initialize.d
       - ./trust:/mnt/external/secrets/tls/cas
+      # Rotate and push secrets to HashiCorp Vault
+      - ./bin/jq:/usr/bin/jq
+      - ./bin/curl:/usr/bin/curl
+      - ./vault/rotate_secrets.sh:/opt/primekey/bin/rotate_secrets.sh
     environment:
       - TLS_SETUP_ENABLED=simple
+      - VAULT_TOKEN=token
     ports:
       - "8043:8443"
+    depends_on:
+      - vault
+    labels:
+      ofelia.enabled: "true"
+      ofelia.job-exec.datecron.schedule: "@every 60s"
+      ofelia.job-exec.datecron.command: "/opt/primekey/bin/rotate_secrets.sh"
   proxy:
     container_name: proxy
     hostname: pki
@@ -32,10 +60,15 @@ services:
     networks:
       - router
     environment:
-      - SECRET=foo123
+      - VAULT_TOKEN=token
+    volumes:
+      - ./bin/jq:/usr/bin/jq
     stdin_open: true
     depends_on:
       - proxy
+      - vault
+    labels:
+      - altiostar
   client2:
     container_name: airscale
     image: realiserad/openssl3
@@ -46,3 +79,6 @@ services:
     stdin_open: true
     depends_on:
       - proxy
+      - vault
+    labels:
+      - nokia
