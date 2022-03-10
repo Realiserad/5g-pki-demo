@@ -1,4 +1,4 @@
 trust
 vendor*.pem
-vault/jq
-vault/curl
+bin/jq
+bin/curl
